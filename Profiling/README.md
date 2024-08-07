@@ -1,5 +1,5 @@
 # بخش اول
-ابتدا کلاس جاواکاپ را با استفاده از yourkit بررسی می‌کنیم.
+ابتدا کلاس JavaCup را با استفاده از yourkit بررسی می‌کنیم.
 
 ![عکس تلمتری](https://github.com/SE-Lab-1402-03-G11/HW-4/blob/BehzadNabavi/Features/ProfilingTest/Profiling/pictures/1/before/telemetry.png)
 ![متد قبل](https://github.com/SE-Lab-1402-03-G11/HW-4/blob/BehzadNabavi/Features/ProfilingTest/Profiling/pictures/1/before/method.png)
@@ -15,3 +15,18 @@
 
 
 ![متد دوم](https://github.com/SE-Lab-1402-03-G11/HW-4/blob/BehzadNabavi/Features/ProfilingTest/Profiling/pictures/1/after/method.png)
+
+# بخش دوم
+کلاس DFS را به برنامه اضافه می‌کنیم. ابتدا، در این کلاس پیاده‌سازی غیربهینه‌ای از dfs انجام دادیم که پروفایلینگ آن را در عکس‌های زیر مشاهده می‌کنید.
+
+![تلمتری دوم](https://github.com/SE-Lab-1402-03-G11/HW-4/blob/BehzadNabavi/Features/ProfilingTest/Profiling/pictures/2/before/method.png)
+
+![تلمتری دوم](https://github.com/SE-Lab-1402-03-G11/HW-4/blob/BehzadNabavi/Features/ProfilingTest/Profiling/pictures/2/before/memory.png)
+
+سپس کد را تغییر می‌دهیم و بخش‌هایی از آن که غیربهینه بودند را درست می‌کنیم. تصاویر پروفایلینگ کد اصلاح‌شده در قسمت زیر است:
+
+![تلمتری دوم](https://github.com/SE-Lab-1402-03-G11/HW-4/blob/BehzadNabavi/Features/ProfilingTest/Profiling/pictures/2/after/method.png)
+
+![تلمتری دوم](https://github.com/SE-Lab-1402-03-G11/HW-4/blob/BehzadNabavi/Features/ProfilingTest/Profiling/pictures/2/after/memory.png)
+
+بهبود عملکرد کد از مقایسهٔ دو عکس پیدا است. بهبودهایی که در کد خود دادیم، شامل حذف آرایه‌های بازگشتی عمیق، حذف HashSetهای تکراری، استفاده‌کردن از استک و استفاده‌کردن از ArrayList برای لیست مجاورت می‌باشد.

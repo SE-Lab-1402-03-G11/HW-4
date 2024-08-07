@@ -1,53 +1,40 @@
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.Stack;
 
 public class DFS {
     private int V;
-    private HashMap<Integer, ArrayList<Integer>> adj;
-    private HashSet<Integer> visitedSet;
-    private boolean[] visitedArray;
+    private ArrayList<Integer>[] adj;
 
     public DFS(int v) {
         V = v;
-        adj = new HashMap<>();
-        visitedSet = new HashSet<>();
-        visitedArray = new boolean[V];
+        adj = new ArrayList[v];
         for (int i = 0; i < v; i++) {
-            adj.put(i, new ArrayList<>());
+            adj[i] = new ArrayList<>();
         }
     }
 
     public void addEdge(int v, int w) {
-        if (!adj.containsKey(v)) {
-            adj.put(v, new ArrayList<>());
-        }
-        adj.get(v).add(w);
+        adj[v].add(w);
     }
 
     public void dfs(int v) {
-        // Unnecessary deep recursion and excessive memory usage
-        ArrayList<Integer> deepRecursion = new ArrayList<>();
-        for (int i = 0; i < 1000000; i++) {
-            deepRecursion.add(i);
-        }
+        boolean[] visited = new boolean[V];
+        Stack<Integer> stack = new Stack<>();
+        stack.push(v);
 
-        if (!visitedSet.contains(v)) {
-            visitedSet.add(v);
-            visitedArray[v] = true;
-            System.out.print(v + " ");
-        }
+        while (!stack.isEmpty()) {
+            int node = stack.pop();
 
-        for (int i = 0; i < adj.get(v).size(); i++) {
-            int neighbor = adj.get(v).get(i);
-            if (!visitedSet.contains(neighbor) || !visitedArray[neighbor]) {
-                dfs(neighbor);
+            if (!visited[node]) {
+                visited[node] = true;
+                System.out.print(node + " ");
+
+                for (int neighbor : adj[node]) {
+                    if (!visited[neighbor]) {
+                        stack.push(neighbor);
+                    }
+                }
             }
-        }
-
-        HashMap<Integer, Integer> redundantMap = new HashMap<>();
-        for (int i = 0; i < 100000; i++) {
-            redundantMap.put(i, i);
         }
     }
 
