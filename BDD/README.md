@@ -2,5 +2,4 @@
 <h2>اجرا شدن تست‌ها</h2>
 <p>همان‌طور که در تصویر قابل مشاهده است همه‌ی تست‌ها به درستی پاس شده‌اند.</p>
 
-![اجرای کامل و صحیح تست‌ها]([g](https://github.com/SE-Lab-1402-03-G11/HW-4/blob/AliRahmizad/Features/BDD3/BDD/Q3.png))
-
+![اجرا شدن کامل و صحیح تست‌ها](https://github.com/SE-Lab-1402-03-G11/HW-4/blob/AliRahmizad/Features/BDD3/BDD/Q3.png)
